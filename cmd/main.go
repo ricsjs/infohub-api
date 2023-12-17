@@ -1,15 +1,21 @@
 package main
 
 import (
+	"log"
+
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
+	"github.com/ricsjs/infohub-api/api/routes"
 )
 
 func main() {
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatal("Erro ao carregar o arquivo .env", err)
+	}
+
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "InfoHub",
-		})
-	})
-	r.Run()
+	routes.SetupRoutes(r)
+
+	r.Run(":8080")
 }

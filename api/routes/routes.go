@@ -28,7 +28,7 @@ func SetupRoutes(r *gin.Engine) {
 		})
 
 		v1.GET("/movie", func(c *gin.Context) {
-			c.JSON(http.StatusOK, "movie")
+			c.JSON(http.StatusOK, handlers.GetAllMovies(c))
 		})
 	}
 }

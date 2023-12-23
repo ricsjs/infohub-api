@@ -24,11 +24,11 @@ func SetupRoutes(r *gin.Engine) {
 		})
 
 		v1.GET("/country", func(c *gin.Context) {
-			c.JSON(http.StatusOK, "country")
+			c.JSON(http.StatusOK, handlers.GetAllCountries(c))
 		})
 
 		v1.GET("/movie", func(c *gin.Context) {
-			c.JSON(http.StatusOK, "movie")
+			c.JSON(http.StatusOK, handlers.GetAllMovies(c))
 		})
 	}
 }

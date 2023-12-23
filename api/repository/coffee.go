@@ -7,7 +7,7 @@ import (
 	"github.com/ricsjs/infohub-api/api/models"
 )
 
-func GetAllCoffee() ([]models.Coffee, error) {
+func GetAllCoffees() ([]models.Coffee, error) {
 	conn, err := db.OpenConnection()
 	if err != nil {
 		log.Fatal(err)

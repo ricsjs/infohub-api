@@ -16,11 +16,11 @@ func SetupRoutes(r *gin.Engine) {
 		})
 
 		v1.GET("/book", func(c *gin.Context) {
-			c.JSON(http.StatusOK, "book")
+			c.JSON(http.StatusOK, handlers.GetAllBooks(c))
 		})
 
 		v1.GET("/coffee", func(c *gin.Context) {
-			c.JSON(http.StatusOK, "coffee")
+			c.JSON(http.StatusOK, handlers.GetAllCoffee(c))
 		})
 
 		v1.GET("/country", func(c *gin.Context) {

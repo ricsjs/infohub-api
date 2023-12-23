@@ -9,13 +9,13 @@ import (
 	"github.com/ricsjs/infohub-api/api/repository"
 )
 
-func GetAllBeers(c *gin.Context) []models.Beer {
-	beers, err := repository.GetAllBeers()
+func GetAllBooks(c *gin.Context) []models.Book {
+	books, err := repository.GetAllBooks()
 	if err != nil {
 		log.Println(err)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "error getting beers from database"})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "error getting books from database"})
 		return nil
 	}
 
-	return beers
+	return books
 }
